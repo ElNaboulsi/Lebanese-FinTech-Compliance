@@ -76,22 +76,22 @@
 2. Assess Current State → /templates/compliance-checklist.xlsx
 3. Estimate Budget → /docs/guide/implementation/budget-framework.md
 4. Plan Implementation → /docs/guide/implementation/12-month-roadmap.md
-
+---
 ### For Compliance Officers
 ```bash
 1. Review Control Mappings → /docs/guide/iso-mapping/
 2. Identify Gaps → /docs/guide/iso-mapping/control-gap-analysis.md
 3. Create Action Plans → /templates/risk-assessment-template.docx
 4. Track Progress → /templates/audit-evidence-tracker.xlsx
-
-### For Compliance Officers
+---
+### For Security Professionals
 ```bash
 1. Review Security Requirements → /docs/guide/circular-analysis/circular-144-2017.md
 2. Design Architecture → /examples/architecture-diagrams/
 3. Implement Controls → /docs/guide/implementation/
 4. Validate Compliance → /tests/compliance-validator.js
-
-### For Compliance Officers
+---
+### For Legal Teams
 ```bash
 1. Study Banking Secrecy Law → /docs/guide/circular-analysis/banking-secrecy-law-1956.md
 2. Review Data Sovereignty → /docs/guide/implementation/data-sovereignty.md
