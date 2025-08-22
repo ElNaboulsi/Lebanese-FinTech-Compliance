@@ -88,7 +88,7 @@
       <h2>BDL Circulars Mapping</h2>
       <ul>
         <li class="req mandatory" data-badge="MANDATORY" title="Circular 144/2017 requires multi-factor authentication." data-ref="iso27001">Multi‑Factor Authentication</li>
-        <li class="req prohibited" data-badge="PROHIBITED" title="Banking Secrecy Law + BDL requirements restrict hosting production data outside Lebanon." data-ref="data-sovereignty">Cloud Hosting Outside Lebanon</li>
+        <li class="req prohibited" data-badge="PROHIBITED" title="Banking Secrecy Law + BDL requirements restrict hosting production data outside Lebanon." data-ref="data-sovereignty">Cloud Hosting Outside Lebanon (Prod Data)</li>
         <li class="req optional" data-badge="RECOMMENDED" title="Cloud security guidance complementing BDL." data-ref="iso27017">ISO 27017 Alignment</li>
       </ul>
     </section>
@@ -133,7 +133,7 @@
     <section class="card" id="audit"><h2>Control Domain: Audit & Monitoring</h2><p>Security logging, monitoring, and periodic assessments aligned to BDL/ISO/PCI.</p></section>
     <section class="card" id="risk"><h2>Control Domain: Risk Management</h2><p>Identify, assess, treat, and monitor risks; governance and continuous improvement.</p></section>
 
-    <footer class="card"><strong>Note:</strong> This public reference reflects a conservative interpretation of BDL requirements and supporting standards. Always consult legal/compliance advisors before implementation.</footer>
+    <footer class="card"><strong>Note:</strong> This public reference reflects a conservative interpretation of BDL requirements and supporting standards. Always consult legal/compliance advisors before implementing or relying on this mapping.</footer>
   </div>
 
   <!-- D3.js -->
@@ -141,22 +141,32 @@
   <script>
     // Reveal on scroll
     const cards = document.querySelectorAll('.card');
-    const onScroll = () => { const t = innerHeight * .9; cards.forEach(c=>{ if(c.getBoundingClientRect().top < t) c.classList.add('visible'); }); };
-    addEventListener('scroll', onScroll); addEventListener('load', onScroll);
+    const onScroll = () => { 
+      const t = innerHeight * .9; 
+      cards.forEach(c => { 
+        if (c.getBoundingClientRect().top < t) c.classList.add('visible'); 
+      }); 
+    };
+    addEventListener('scroll', onScroll); 
+    addEventListener('load', onScroll);
 
     // Cross-ref click from requirement bullets
-    document.querySelectorAll('.req').forEach(el=>{
-      el.addEventListener('click', ()=>{
-        const id = el.dataset.ref; if(!id) return;
-        const target = document.getElementById(id); if(!target) return;
+    document.querySelectorAll('.req').forEach(el => {
+      el.addEventListener('click', () => {
+        const id = el.dataset.ref;
+        if(!id) return;
+        const target = document.getElementById(id);
+        if(!target) return;
         target.scrollIntoView({behavior:'smooth', block:'center'});
-        target.classList.add('highlight'); setTimeout(()=>target.classList.remove('highlight'), 2200);
+        target.classList.add('highlight');
+        setTimeout(() => target.classList.remove('highlight'), 2200);
       });
     });
 
     // --- D3 force graph ---
     const svg = d3.select('#graph');
-    const width = svg.node().clientWidth; const height = svg.node().clientHeight;
+    const width = svg.node().clientWidth; 
+    const height = svg.node().clientHeight;
     svg.attr('viewBox', [0,0,width,height]);
 
     const defs = svg.append('defs');
@@ -226,42 +236,63 @@
       {source:'RM', target:'ISO27001'}, {source:'RM', target:'BASEL'}
     ];
 
-    const color = (g)=> g==='reg'? getComputedStyle(document.documentElement).getPropertyValue('--reg')
-                        : g==='law'? getComputedStyle(document.documentElement).getPropertyValue('--law')
-                        : g==='domain'? getComputedStyle(document.documentElement).getPropertyValue('--domain')
-                        : getComputedStyle(document.documentElement).getPropertyValue('--std');
+    const color = (g) => g==='reg'
+      ? getComputedStyle(document.documentElement).getPropertyValue('--reg')
+      : g==='law'
+        ? getComputedStyle(document.documentElement).getPropertyValue('--law')
+        : g==='domain'
+          ? getComputedStyle(document.documentElement).getPropertyValue('--domain')
+          : getComputedStyle(document.documentElement).getPropertyValue('--std');
 
-    const radius = (g)=> g==='domain'? 18 : g==='reg'? 16 : g==='std'? 14 : 16;
+    const radius = (g) => g==='domain' ? 18 : g==='reg' ? 16 : g==='std' ? 14 : 16;
 
     const g = svg.append('g');
 
     const link = g.append('g').attr('stroke','#9ca3af').attr('stroke-width',1.5)
       .selectAll('line').data(links).join('line').attr('marker-end','url(#arrow)');
 
-    const node = g.append('g').selectAll('g').data(nodes).join('g').call(drag(simulation));
-
-    node.append('circle').attr('r', d=>radius(d.group)).attr('fill', d=>color(d.group)).attr('opacity', .9)
-      .attr('stroke','#fff').attr('stroke-width',2)
-      .append('title').text(d=>nodeInfo[d.id]||d.label);
-
-    node.append('text').text(d=>d.label).attr('text-anchor','middle').attr('dy',4)
-      .attr('fill','#111827').attr('font-size','12px').attr('pointer-events','none').attr('font-weight',600);
-
-    node.on('click', (event,d)=>{
-      if(d.href){ const el=document.querySelector(d.href); if(el){ el.scrollIntoView({behavior:'smooth', block:'center'}); el.classList.add('highlight'); setTimeout(()=>el.classList.remove('highlight'),2200);} }
-    }).on('mouseenter', function(e,d){ d3.select(this).select('circle').attr('stroke','#111827'); })
-      .on('mouseleave', function(){ d3.select(this).select('circle').attr('stroke','#fff'); });
-
-    // Zoom / pan
-    svg.call(d3.zoom().scaleExtent([.5, 3]).on('zoom', (event)=>{ g.attr('transform', event.transform); }));
-
-    // Force simulation
+    // Move simulation setup BEFORE drag() is called!
     const simulation = d3.forceSimulation(nodes)
       .force('link', d3.forceLink(links).id(d=>d.id).distance(l=> l.source.group==='domain' || l.target.group==='domain' ? 120 : 90).strength(.7))
       .force('charge', d3.forceManyBody().strength(-260))
       .force('center', d3.forceCenter(width/2, height/2))
       .on('tick', ticked);
 
+    const node = g.append('g').selectAll('g').data(nodes).join('g').call(drag(simulation));
+
+    node.append('circle')
+      .attr('r', d => radius(d.group))
+      .attr('fill', d => color(d.group))
+      .attr('opacity', .9)
+      .attr('stroke','#fff')
+      .attr('stroke-width',2)
+      .append('title').text(d=>nodeInfo[d.id]||d.label);
+
+    node.append('text')
+      .text(d => d.label)
+      .attr('text-anchor','middle')
+      .attr('dy',4)
+      .attr('fill','#111827')
+      .attr('font-size','12px')
+      .attr('pointer-events','none')
+      .attr('font-weight',600);
+
+    node.on('click', (event,d)=>{
+      if(d.href){
+        const el=document.querySelector(d.href);
+        if(el){
+          el.scrollIntoView({behavior:'smooth', block:'center'});
+          el.classList.add('highlight');
+          setTimeout(()=>el.classList.remove('highlight'), 2200);
+        }
+      }
+    }).on('mouseenter', function(e,d){ d3.select(this).select('circle').attr('stroke','#111827'); })
+      .on('mouseleave', function(){ d3.select(this).select('circle').attr('stroke','#fff'); });
+
+    // Zoom / pan
+    svg.call(d3.zoom().scaleExtent([.5, 3]).on('zoom', (event)=>{ g.attr('transform', event.transform); }));
+
+    // Force simulation tick
     function ticked(){
       link.attr('x1', d=>d.source.x).attr('y1', d=>d.source.y)
           .attr('x2', d=>d.target.x).attr('y2', d=>d.target.y);
