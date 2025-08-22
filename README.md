@@ -1,4 +1,4 @@
-# 🇱🇧 Lebanese FinTech BDL Compliance Guide
+# Lebanese FinTech BDL Compliance Guide
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![GitHub stars](https://img.shields.io/github/stars/yourusername/lebanon-fintech-bdl-compliance.svg)](https://github.com/yourusername/lebanon-fintech-bdl-compliance/stargazers)
