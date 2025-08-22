@@ -21,11 +21,10 @@
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.45 "Segoe UI",Tahoma,Arial,sans-serif}
-    body{background:var(--bg);}
     .container{max-width:1200px;margin:auto;padding:24px}
-    header{background:linear-gradient(135deg,var(--brand1),var(--brand2));padding:28px;border-radius:18px;color:#fff;box-shadow:var(--shadow);}
-    header h1{margin:0 0 6px;font-size:1.9rem;}
-    header p{margin:0;opacity:.95;}
+    header{background:linear-gradient(135deg,var(--brand1),var(--brand2));padding:28px;border-radius:18px;color:#fff;box-shadow:var(--shadow)}
+    header h1{margin:0 0 6px;font-size:1.9rem}
+    header p{margin:0;opacity:.95}
 
     .legend{position:sticky;top:8px;z-index:10;margin:18px 0;display:flex;gap:14px;flex-wrap:wrap;background:var(--card);padding:10px 14px;border-radius:12px;box-shadow:var(--shadow)}
     .legend span{display:flex;align-items:center;gap:8px;font-size:.9rem}
@@ -247,20 +246,19 @@
 
     const radius = (g) => g==='domain' ? 18 : g==='reg' ? 16 : g==='std' ? 14 : 16;
 
-    const gElem = svg.append('g');
+    const g = svg.append('g');
 
-    const link = gElem.append('g').attr('stroke','#9ca3af').attr('stroke-width',1.5)
+    const link = g.append('g').attr('stroke','#9ca3af').attr('stroke-width',1.5)
       .selectAll('line').data(links).join('line').attr('marker-end','url(#arrow)');
 
-    // Setup simulation
+    // Move simulation setup BEFORE drag() is called!
     const simulation = d3.forceSimulation(nodes)
       .force('link', d3.forceLink(links).id(d=>d.id).distance(l=> l.source.group==='domain' || l.target.group==='domain' ? 120 : 90).strength(.7))
       .force('charge', d3.forceManyBody().strength(-260))
       .force('center', d3.forceCenter(width/2, height/2))
       .on('tick', ticked);
 
-    const node = gElem.append('g').selectAll('g').data(nodes).join('g')
-      .call(drag(simulation));
+    const node = g.append('g').selectAll('g').data(nodes).join('g').call(drag(simulation));
 
     node.append('circle')
       .attr('r', d => radius(d.group))
@@ -292,15 +290,13 @@
       .on('mouseleave', function(){ d3.select(this).select('circle').attr('stroke','#fff'); });
 
     // Zoom / pan
-    svg.call(d3.zoom().scaleExtent([.5, 3]).on('zoom', (event)=>{ gElem.attr('transform', event.transform); }));
+    svg.call(d3.zoom().scaleExtent([.5, 3]).on('zoom', (event)=>{ g.attr('transform', event.transform); }));
 
     // Force simulation tick
     function ticked(){
-      gElem.selectAll('line')
-        .attr('x1', d=>d.source.x).attr('y1', d=>d.source.y)
-        .attr('x2', d=>d.target.x).attr('y2', d=>d.target.y);
-      gElem.selectAll('g')
-        .attr('transform', d=>`translate(${d.x},${d.y})`);
+      link.attr('x1', d=>d.source.x).attr('y1', d=>d.source.y)
+          .attr('x2', d=>d.target.x).attr('y2', d=>d.target.y);
+      node.attr('transform', d=>`translate(${d.x},${d.y})`);
     }
 
     function drag(sim){
