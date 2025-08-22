@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lebanese FinTech BDL Compliance Map</title>
+  <meta name="description" content="Interactive map of Lebanese FinTech compliance: BDL circulars, Banking Secrecy Law, ISO 27001/27017, PCI DSS, Basel III and key control domains." />
+  <meta property="og:title" content="Lebanese FinTech BDL Compliance Map" />
+  <meta property="og:description" content="Interactive map of BDL circulars, laws, international standards and control domains for Lebanese FinTechs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" />
+  <meta name="theme-color" content="#667eea" />
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --fg: #1f2937;
+      --card: #ffffff;
+      --shadow: 0 4px 12px rgba(0,0,0,.08);
+      --brand1:#667eea; --brand2:#764ba2;
+      --reg:#7c3aed; --law:#ef4444; --domain:#f59e0b; --std:#0ea5a4;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.45 "Segoe UI",Tahoma,Arial,sans-serif}
+    .container{max-width:1200px;margin:auto;padding:24px}
+    header{background:linear-gradient(135deg,var(--brand1),var(--brand2));padding:28px;border-radius:18px;color:#fff;box-shadow:var(--shadow)}
+    header h1{margin:0 0 6px;font-size:1.9rem}
+    header p{margin:0;opacity:.95}
+
+    .legend{position:sticky;top:8px;z-index:10;margin:18px 0;display:flex;gap:14px;flex-wrap:wrap;background:var(--card);padding:10px 14px;border-radius:12px;box-shadow:var(--shadow)}
+    .legend span{display:flex;align-items:center;gap:8px;font-size:.9rem}
+    .badge{width:12px;height:12px;border-radius:4px;display:inline-block}
+    .b-reg{background:var(--reg)}.b-law{background:var(--law)}.b-domain{background:var(--domain)}.b-std{background:var(--std)}
+
+    .card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);padding:20px;margin:18px 0;opacity:0;transform:translateY(12px);transition:all .5s ease}
+    .card.visible{opacity:1;transform:none}
+    .card h2{margin:0 0 10px;font-size:1.2rem}
+
+    /* Requirement badges + tooltips */
+    .req{position:relative;margin:10px 0;padding-left:10px;cursor:pointer}
+    .req:before{content:attr(data-badge);font-size:.65rem;font-weight:700;margin-right:8px;padding:2px 6px;border-radius:6px;color:#fff}
+    .req.mandatory:before{background:#16a34a}
+    .req.prohibited:before{background:#dc2626}
+    .req.optional:before{background:#2563eb}
+    .req:hover::after{content:attr(title);position:absolute;left:0;bottom:120%;background:#111827;color:#fff;padding:6px 10px;border-radius:6px;font-size:.75rem;white-space:nowrap;opacity:.95}
+
+    /* Graph */
+    .graph-wrap{position:relative}
+    .graph-help{position:absolute;right:10px;top:10px;background:#111827;color:#fff;padding:6px 10px;border-radius:999px;font-size:.75rem;opacity:.9}
+    #graph{width:100%;height:520px;background:linear-gradient(180deg,#ffffff,#f3f4f6);border-radius:14px;box-shadow:var(--shadow)}
+
+    .highlight{animation:pulse 1.2s ease-out 2}
+    @keyframes pulse{0%{background:#e0f2fe}50%{background:#bae6fd}100%{background:#fff}}
+
+    /* Flow + timeline */
+    .flow{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+    .node{flex:1 1 220px;background:#f3f4f6;border-radius:12px;padding:14px;text-align:center;transition:transform .2s}
+    .node:hover{transform:scale(1.03)}
+
+    .timeline{display:grid;gap:12px}
+    .phase{background:#f9fafb;border-left:5px solid var(--brand1);padding:12px 16px;border-radius:8px}
+
+    @media (max-width:768px){#graph{height:440px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="card visible">
+      <h1>Lebanese FinTech BDL Compliance Map 🇱🇧</h1>
+      <p>Interactive links between BDL circulars, the Banking Secrecy Law, control domains, and international standards (ISO 27001/27017, PCI DSS, Basel III).</p>
+    </header>
+
+    <div class="legend">
+      <span><i class="badge b-reg"></i> BDL Circulars</span>
+      <span><i class="badge b-law"></i> Law</span>
+      <span><i class="badge b-domain"></i> Control Domains</span>
+      <span><i class="badge b-std"></i> Standards</span>
+    </div>
+
+    <!-- GRAPH -->
+    <section class="card visible graph-wrap" id="graph-card">
+      <h2>Interactive Compliance Graph</h2>
+      <div class="graph-help">scroll to zoom • drag to explore • click to jump</div>
+      <svg id="graph" role="img" aria-label="Interactive compliance graph"></svg>
+    </section>
+
+    <!-- BDL Circulars Mapping -->
+    <section class="card" id="bdl">
+      <h2>BDL Circulars Mapping</h2>
+      <ul>
+        <li class="req mandatory" data-badge="MANDATORY" title="Circular 144/2017 requires multi-factor authentication." data-ref="iso27001">Multi‑Factor Authentication</li>
+        <li class="req prohibited" data-badge="PROHIBITED" title="Banking Secrecy Law + BDL requirements restrict hosting production data outside Lebanon." data-ref="data-sovereignty">Cloud Hosting Outside Lebanon</li>
+        <li class="req optional" data-badge="RECOMMENDED" title="Cloud security guidance complementing BDL." data-ref="iso27017">ISO 27017 Alignment</li>
+      </ul>
+    </section>
+
+    <!-- Infrastructure Flow -->
+    <section class="card" id="infrastructure">
+      <h2>Mandatory Lebanese Infrastructure Flow</h2>
+      <div class="flow">
+        <div class="node">Internet Gateway (Lebanese ISP only)</div>
+        <div class="node">DMZ / WAF / IDS (in Lebanon)</div>
+        <div class="node">Application Layer (2FA enforced)</div>
+        <div class="node">Database Layer (Encrypted, in Lebanon)</div>
+        <div class="node">Backup / DR Site (Lebanon, geo‑separated)</div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="card" id="roadmap">
+      <h2>12‑Month Compliance Roadmap</h2>
+      <div class="timeline">
+        <div class="phase">Months 1‑2 — Gap Assessment & Legal Alignment</div>
+        <div class="phase">Months 3‑4 — Architecture & Provider Selection</div>
+        <div class="phase">Months 5‑7 — Controls Deployment & DR Setup</div>
+        <div class="phase">Months 8‑9 — Security & DR Testing</div>
+        <div class="phase">Months 10‑11 — Evidence Pack & BDL Submission</div>
+        <div class="phase">Month 12 — Go‑Live & Ongoing Monitoring</div>
+      </div>
+    </section>
+
+    <!-- Standards / Domains / Framework Sections (anchors for scrolling) -->
+    <section class="card" id="iso27001"><h2>ISO 27001 Reference</h2><p>Access control, authentication, audit logging, cryptography, BCP/DR, supplier management, and continuous improvement.</p></section>
+    <section class="card" id="iso27017"><h2>ISO 27017 Reference</h2><p>Cloud‑specific controls for shared responsibility, tenant isolation, admin operations, and cloud monitoring.</p></section>
+    <section class="card" id="pcidss"><h2>PCI DSS v4.0 Reference</h2><p>Cardholder data protection, strong access control, encryption, monitoring/logging, and quarterly/annual assessments.</p></section>
+    <section class="card" id="basel"><h2>Basel III Reference</h2><p>Operational risk, resilience, governance, and risk data aggregation for financial institutions.</p></section>
+
+    <section class="card" id="data-sovereignty"><h2>Control Domain: Data Sovereignty</h2><p>Lebanese residency for production and backup data; avoid international routing; enforce local access.</p></section>
+    <section class="card" id="access-controls"><h2>Control Domain: Access Controls</h2><p>RBAC, MFA/2FA, privileged access management, session recording.</p></section>
+    <section class="card" id="encryption"><h2>Control Domain: Encryption</h2><p>TLS 1.2+/1.3 in transit; AES‑256 at rest; key management and HSM recommendations.</p></section>
+    <section class="card" id="business-continuity"><h2>Control Domain: Business Continuity</h2><p>RTO/RPO targets, DR site in Lebanon, regular testing and board‑approved plans.</p></section>
+    <section class="card" id="incident"><h2>Control Domain: Incident Management</h2><p>24/7 monitoring, incident response procedures, evidence preservation, and BDL notification.</p></section>
+    <section class="card" id="supplier"><h2>Control Domain: Supplier Management</h2><p>Due diligence, shared responsibility matrices, exit strategies, and BDL supervisory access.</p></section>
+    <section class="card" id="audit"><h2>Control Domain: Audit & Monitoring</h2><p>Security logging, monitoring, and periodic assessments aligned to BDL/ISO/PCI.</p></section>
+    <section class="card" id="risk"><h2>Control Domain: Risk Management</h2><p>Identify, assess, treat, and monitor risks; governance and continuous improvement.</p></section>
+
+    <footer class="card"><strong>Note:</strong> This public reference reflects a conservative interpretation of BDL requirements and supporting standards. Always consult legal/compliance advisors before implementation.</footer>
+  </div>
+
+  <!-- D3.js -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script>
+    // Reveal on scroll
+    const cards = document.querySelectorAll('.card');
+    const onScroll = () => { const t = innerHeight * .9; cards.forEach(c=>{ if(c.getBoundingClientRect().top < t) c.classList.add('visible'); }); };
+    addEventListener('scroll', onScroll); addEventListener('load', onScroll);
+
+    // Cross-ref click from requirement bullets
+    document.querySelectorAll('.req').forEach(el=>{
+      el.addEventListener('click', ()=>{
+        const id = el.dataset.ref; if(!id) return;
+        const target = document.getElementById(id); if(!target) return;
+        target.scrollIntoView({behavior:'smooth', block:'center'});
+        target.classList.add('highlight'); setTimeout(()=>target.classList.remove('highlight'), 2200);
+      });
+    });
+
+    // --- D3 force graph ---
+    const svg = d3.select('#graph');
+    const width = svg.node().clientWidth; const height = svg.node().clientHeight;
+    svg.attr('viewBox', [0,0,width,height]);
+
+    const defs = svg.append('defs');
+    defs.append('marker')
+      .attr('id','arrow')
+      .attr('viewBox','0 -5 10 10')
+      .attr('refX',14).attr('refY',0).attr('markerWidth',6).attr('markerHeight',6).attr('orient','auto')
+      .append('path').attr('d','M0,-5L10,0L0,5').attr('fill','#9ca3af');
+
+    const nodeInfo = {
+      C69:"BDL Basic Circular 69/2000 — Electronic Banking Operations",
+      C144:"BDL Basic Circular 144/2017 — Cybersecurity Measures",
+      C141:"BDL Basic Circular 141/2017 — Recovery Plans",
+      C128:"BDL Basic Circular 128/2013 — Outsourcing Restrictions",
+      BSL:"Banking Secrecy Law of 1956 — client confidentiality & data residency",
+      DS:"Control: Data Sovereignty",
+      AC:"Control: Access Controls",
+      ENC:"Control: Encryption",
+      BC:"Control: Business Continuity",
+      IR:"Control: Incident Management",
+      SUP:"Control: Supplier Management",
+      AUD:"Control: Audit & Monitoring",
+      RM:"Control: Risk Management",
+      ISO27001:"ISO 27001:2022",
+      ISO27017:"ISO 27017:2015 (Cloud)",
+      PCIDSS:"PCI DSS v4.0",
+      BASEL:"Basel III / BCBS 239"
+    };
+
+    const nodes = [
+      {id:'C69', label:'BDL 69/2000', group:'reg'},
+      {id:'C144', label:'BDL 144/2017', group:'reg'},
+      {id:'C141', label:'BDL 141/2017', group:'reg'},
+      {id:'C128', label:'BDL 128/2013', group:'reg'},
+      {id:'BSL', label:'Banking Secrecy Law', group:'law'},
+
+      {id:'DS', label:'Data Sovereignty', group:'domain', href:'#data-sovereignty'},
+      {id:'AC', label:'Access Controls', group:'domain', href:'#access-controls'},
+      {id:'ENC', label:'Encryption', group:'domain', href:'#encryption'},
+      {id:'BC', label:'Business Continuity', group:'domain', href:'#business-continuity'},
+      {id:'IR', label:'Incident Mgmt', group:'domain', href:'#incident'},
+      {id:'SUP', label:'Supplier Mgmt', group:'domain', href:'#supplier'},
+      {id:'AUD', label:'Audit & Monitoring', group:'domain', href:'#audit'},
+      {id:'RM', label:'Risk Mgmt', group:'domain', href:'#risk'},
+
+      {id:'ISO27001', label:'ISO 27001', group:'std', href:'#iso27001'},
+      {id:'ISO27017', label:'ISO 27017', group:'std', href:'#iso27017'},
+      {id:'PCIDSS', label:'PCI DSS', group:'std', href:'#pcidss'},
+      {id:'BASEL', label:'Basel III', group:'std', href:'#basel'}
+    ];
+
+    const links = [
+      // Regulations to domains
+      {source:'C69', target:'RM'},
+      {source:'C144', target:'AC'}, {source:'C144', target:'ENC'}, {source:'C144', target:'IR'},
+      {source:'C141', target:'BC'},
+      {source:'C128', target:'SUP'}, {source:'C128', target:'AUD'},
+      {source:'BSL', target:'DS'},
+      // Domains to standards
+      {source:'DS', target:'ISO27001'}, {source:'DS', target:'ISO27017'}, {source:'DS', target:'PCIDSS'},
+      {source:'AC', target:'ISO27001'}, {source:'AC', target:'PCIDSS'},
+      {source:'ENC', target:'ISO27001'}, {source:'ENC', target:'PCIDSS'},
+      {source:'BC', target:'ISO27001'}, {source:'BC', target:'BASEL'}, {source:'BC', target:'PCIDSS'},
+      {source:'IR', target:'ISO27001'}, {source:'IR', target:'PCIDSS'},
+      {source:'SUP', target:'ISO27001'}, {source:'SUP', target:'ISO27017'},
+      {source:'AUD', target:'ISO27001'}, {source:'AUD', target:'PCIDSS'}, {source:'AUD', target:'BASEL'},
+      {source:'RM', target:'ISO27001'}, {source:'RM', target:'BASEL'}
+    ];
+
+    const color = (g)=> g==='reg'? getComputedStyle(document.documentElement).getPropertyValue('--reg')
+                        : g==='law'? getComputedStyle(document.documentElement).getPropertyValue('--law')
+                        : g==='domain'? getComputedStyle(document.documentElement).getPropertyValue('--domain')
+                        : getComputedStyle(document.documentElement).getPropertyValue('--std');
+
+    const radius = (g)=> g==='domain'? 18 : g==='reg'? 16 : g==='std'? 14 : 16;
+
+    const g = svg.append('g');
+
+    const link = g.append('g').attr('stroke','#9ca3af').attr('stroke-width',1.5)
+      .selectAll('line').data(links).join('line').attr('marker-end','url(#arrow)');
+
+    const node = g.append('g').selectAll('g').data(nodes).join('g').call(drag(simulation));
+
+    node.append('circle').attr('r', d=>radius(d.group)).attr('fill', d=>color(d.group)).attr('opacity', .9)
+      .attr('stroke','#fff').attr('stroke-width',2)
+      .append('title').text(d=>nodeInfo[d.id]||d.label);
+
+    node.append('text').text(d=>d.label).attr('text-anchor','middle').attr('dy',4)
+      .attr('fill','#111827').attr('font-size','12px').attr('pointer-events','none').attr('font-weight',600);
+
+    node.on('click', (event,d)=>{
+      if(d.href){ const el=document.querySelector(d.href); if(el){ el.scrollIntoView({behavior:'smooth', block:'center'}); el.classList.add('highlight'); setTimeout(()=>el.classList.remove('highlight'),2200);} }
+    }).on('mouseenter', function(e,d){ d3.select(this).select('circle').attr('stroke','#111827'); })
+      .on('mouseleave', function(){ d3.select(this).select('circle').attr('stroke','#fff'); });
+
+    // Zoom / pan
+    svg.call(d3.zoom().scaleExtent([.5, 3]).on('zoom', (event)=>{ g.attr('transform', event.transform); }));
+
+    // Force simulation
+    const simulation = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(d=>d.id).distance(l=> l.source.group==='domain' || l.target.group==='domain' ? 120 : 90).strength(.7))
+      .force('charge', d3.forceManyBody().strength(-260))
+      .force('center', d3.forceCenter(width/2, height/2))
+      .on('tick', ticked);
+
+    function ticked(){
+      link.attr('x1', d=>d.source.x).attr('y1', d=>d.source.y)
+          .attr('x2', d=>d.target.x).attr('y2', d=>d.target.y);
+      node.attr('transform', d=>`translate(${d.x},${d.y})`);
+    }
+
+    function drag(sim){
+      function dragstarted(event,d){ if(!event.active) sim.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; }
+      function dragged(event,d){ d.fx=event.x; d.fy=event.y; }
+      function dragended(event,d){ if(!event.active) sim.alphaTarget(0); d.fx=null; d.fy=null; }
+      return d3.drag().on('start',dragstarted).on('drag',dragged).on('end',dragended);
+    }
+  </script>
+</body>
+</html>
