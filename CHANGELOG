@@ -1,0 +1,34 @@
+# Changelog
+
+All notable changes to the Lebanese FinTech BDL Compliance Guide will be documented in this file.
+
+## [2.1.0] - 2024-12-15
+
+### Added
+- Banking Secrecy Law amendments (Law No. 306/2022 and 2025 updates)
+- Official BDL circular reference links
+- Clarification documents for cloud prohibition
+- Amendment impact analysis section
+- Version badge in README
+- Updated visual map with amendment indicators
+
+### Changed
+- Updated Banking Secrecy Law section to reflect amendments
+- Clarified cloud prohibition as practical effect, not explicit circular
+- Marked RTO/RPO targets as recommendations
+- Updated HSM requirements (FIPS 140-2 Level 2/3)
+- Enhanced data sovereignty explanation with amendment context
+- Updated all dates to December 2024
+
+### Fixed
+- Corrected circular issuance dates
+- Fixed broken reference links
+- Updated contact information disclaimer
+
+### Clarified
+- Cloud hosting prohibition reasoning
+- Recovery objectives as recommendations
+- HSM level requirements flexibility
+
+## [2.0.0] - 2024-08-22
+[Previous version details...]
