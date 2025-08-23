@@ -1,0 +1,71 @@
+# Banking Secrecy Law Amendments (2022-2025)
+
+## Overview
+
+The Banking Secrecy Law of 1956, once an absolute protection of client confidentiality, has undergone significant amendments in response to Lebanon's economic crisis and international transparency requirements.
+
+## Key Amendments
+
+### Law No. 306/2022
+**Enacted:** October 2022  
+**Key Changes:**
+- Introduced first major exceptions to banking secrecy
+- Allowed access for judicial investigations
+- Enabled BDL and BCC supervisory access
+
+### 2025 Amendments
+**Enacted:** Early 2025  
+**Key Changes:**
+- Expanded authorized entities list
+- Added tax authority access rights
+- Included National Authority for Fighting Corruption
+- Permitted appointed auditor access
+
+## Authorized Entities (Post-Amendment)
+
+1. **The Judiciary and Special Investigation Commission (SIC)**
+   - For investigating financial crimes, corruption, and illicit enrichment
+
+2. **Central Bank (BDL) and Banking Control Commission (BCC)**
+   - For supervisory and auditing purposes
+
+3. **Tax Authorities**
+   - To verify compliance and combat evasion
+
+4. **National Authority for Fighting Corruption**
+   - For corruption investigations
+
+5. **Appointed Independent Auditors**
+   - For specific audit purposes
+
+## Impact on Data Sovereignty
+
+Despite these amendments, the practical effect on data sovereignty remains unchanged:
+
+### Why Data Must Stay in Lebanon
+1. **Immediate Access Requirement:** Lebanese authorities must have immediate access for investigations
+2. **Legal Jurisdiction:** Lebanese courts must maintain jurisdiction over data
+3. **Supervisory Oversight:** BDL requires direct supervisory access to systems
+4. **Enforcement Capability:** Penalties and enforcement require local data presence
+
+### Cloud Hosting Implications
+- International cloud platforms would impede legally mandated access
+- Cross-border data transfers complicate jurisdictional oversight
+- Local hosting ensures compliance with amended access requirements
+
+## Compliance Recommendations
+
+1. **Maintain Strict Access Controls:** Document and log all data access
+2. **Update Privacy Policies:** Reflect new legal exceptions
+3. **Enhance Audit Trails:** Comprehensive logging for authorized access
+4. **Review Contracts:** Ensure vendor agreements reflect amendments
+5. **Train Staff:** Update training on new confidentiality exceptions
+
+## References
+- Law No. 306/2022 (Official Gazette)
+- 2025 Banking Secrecy Amendment Act
+- BDL Circular Updates
+- IMF Country Report on Lebanon
+
+---
+*Last Updated: December 2024*
