@@ -119,7 +119,7 @@ Complete artifact index including:
 
 ## 💰 Implementation Investment Reality
 
-### Comprehensive Cost Framework (Annual)
+### Comprehensive Cost Framework (Annual) (Example)
 
 | Category | Minimum | Typical | Maximum | ROI Consideration |
 |----------|---------|---------|---------|-------------------|
