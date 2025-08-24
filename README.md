@@ -30,12 +30,20 @@
 - **Non-Bank FinTechs:** Contractual obligations when partnering with BDL-supervised institutions
 - **Legal Framework:** Not exhaustive for all Lebanese laws - focused on BDL requirements
 
-### 📋 Scope & Applicability
-- **Clear Guidance:** Who needs to comply based on licensing status
-- **Non-Bank FinTechs:** Contractual obligations when partnering with BDL-supervised institutions
-- **Legal Framework:** Not exhaustive for all Lebanese laws - focused on BDL requirements
-
 ### 🔐 Enhanced Data Classification Framework
+┌─────────────────────────────────────────────────────────┐
+│ Class 1: Banking Secrecy Protected (RED)               │
+│ → Must be hosted in Lebanon, segregated infrastructure │
+├─────────────────────────────────────────────────────────┤
+│ Class 2: Regulatory Protected (ORANGE)                 │
+│ → Lebanese hosting for BDL/BCC supervisory access      │
+├─────────────────────────────────────────────────────────┤
+│ Class 3: Business Protected (YELLOW)                   │
+│ → Best practice: Lebanon, external requires assessment │
+├─────────────────────────────────────────────────────────┤
+│ Class 4: Public (GREEN)                                │
+│ → Global hosting acceptable (CDN, etc.)                │
+└─────────────────────────────────────────────────────────┘
 
 ### 🛡️ Risk-Based Security Enhancements
 - **2FA Implementation:** Mandatory for critical systems with documented risk-based exceptions
@@ -84,6 +92,20 @@ Complete artifact index including:
 ---
 
 ## 📚 Documentation Structure
+📁 Complete Guide (450+ pages)
+├── 📋 BDL Regulatory Framework
+├── 🔍 Detailed Circular Analysis
+├── 🗺️ ISO 27001:2022 Mapping
+├── 💾 Data Sovereignty Requirements
+├── 🛡️ Security & Risk Management
+├── 🔄 Business Continuity
+├── 📊 Implementation Roadmap
+└── 📦 Pre-Submission Pack
+📁 Quick Start Guides
+├── 🚀 For Founders (10 pages)
+├── 📋 For Compliance (15 pages)
+├── 🔒 For Security (20 pages)
+└── ⚖️ For Legal (12 pages)
 
 ### Core Framework
 ### Key Features v2.0
