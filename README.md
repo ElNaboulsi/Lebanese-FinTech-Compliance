@@ -15,7 +15,7 @@
 
 [📖 Complete Guide](https://elnaboulsi.github.io/Lebanese-FinTech-Compliance/) | 
 [🌐 Interactive Map](https://elnaboulsi.github.io/Lebanese-FinTech-Compliance/visual-map/) | 
-[📥 Download PDF](https://github.com/elnaboulsi/Lebanese-FinTech-Compliance/releases/latest) |
+[📥 Download PDF]([https://github.com/elnaboulsi/Lebanese-FinTech-Compliance/releases/latest](https://github.com/ElNaboulsi/Lebanese-FinTech-Compliance/blob/main/Lebanese_FinTech_BDL_Compliance_Guide_Final_v2.0.pdf)) |
 [💼 Pre-Submission Pack](docs/templates/pre-submission-pack/) |
 [🎯 Quick Start](docs/guide/quick-start/)
 
