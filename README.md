@@ -162,17 +162,17 @@ Complete artifact index including:
 ### Quick Setup
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/lebanon-fintech-bdl-compliance.git
-cd lebanon-fintech-bdl-compliance
+git clone https://github.com/elnaboulsi/Lebanese-FinTech-Compliance.git
+cd Lebanese-FinTech-Compliance
 
-# Install dependencies
+# Install dependencies (coming soon)
 npm install
 pip install -r requirements.txt
 
-# Run compliance checker
+# Run compliance checker (coming soon)
 python tools/scripts/validate-compliance.py
 
-# Generate evidence pack
+# Generate evidence pack (coming soon)
 python tools/scripts/generate-evidence.py
 
 # Launch interactive map
