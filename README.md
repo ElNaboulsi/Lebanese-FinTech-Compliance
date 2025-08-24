@@ -139,21 +139,21 @@ Complete artifact index including:
 ## 🛠️ Tools & Resources
 
 ### Interactive Tools
-- **[Compliance Checker](tools/compliance-checker/)** - Automated gap analysis
-- **[RTO/RPO Calculator](tools/calculators/rto-rpo-calculator.html)** - Recovery objective planning
-- **[Budget Estimator](tools/calculators/budget-estimator.html)** - Cost projection tool
-- **[Risk Scorer](tools/calculators/risk-scorer.html)** - Quantitative risk assessment
+- **[Compliance Checker](tools/compliance-checker/)** - Automated gap analysis (coming soon)
+- **[RTO/RPO Calculator](tools/calculators/rto-rpo-calculator.html)** - Recovery objective planning (coming soon)
+- **[Budget Estimator](tools/calculators/budget-estimator.html)** - Cost projection tool (coming soon)
+- **[Risk Scorer](tools/calculators/risk-scorer.html)** - Quantitative risk assessment (coming soon)
 
 ### Templates & Checklists
-- **[Pre-Submission Pack](docs/templates/pre-submission-pack/)** - BDL submission artifacts
-- **[Policy Templates](docs/templates/policies/)** - Ready-to-customize policies
-- **[Evidence Tracker](docs/templates/evidence/)** - Audit evidence management
-- **[Daily Compliance Checklist](tools/checklists/daily-compliance.md)** - Operational tasks
+- **[Pre-Submission Pack](docs/templates/pre-submission-pack/)** - BDL submission artifacts (coming soon)
+- **[Policy Templates](docs/templates/policies/)** - Ready-to-customize policies (coming soon)
+- **[Evidence Tracker](docs/templates/evidence/)** - Audit evidence management (coming soon)
+- **[Daily Compliance Checklist](tools/checklists/daily-compliance.md)** - Operational tasks (coming soon)
 
 ### Architecture Examples
-- **[Lebanese-Only Infrastructure](examples/architectures/lebanese-only-infrastructure.yaml)**
-- **[DR Site Configuration](examples/architectures/dr-site-configuration.yaml)**
-- **[Network Segmentation](examples/architectures/network-segmentation.yaml)**
+- **[Lebanese-Only Infrastructure](examples/architectures/lebanese-only-infrastructure.yaml)** (coming soon)
+- **[DR Site Configuration](examples/architectures/dr-site-configuration.yaml)** (coming soon)
+- **[Network Segmentation](examples/architectures/network-segmentation.yaml)** (coming soon)
 
 ---
 
