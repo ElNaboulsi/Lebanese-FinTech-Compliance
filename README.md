@@ -1,77 +1,157 @@
-# 🇱🇧 Lebanese FinTech BDL Compliance Guide v2.1
+# 🇱🇧 Lebanese FinTech BDL Compliance Guide v2.0
 
 <div align="center">
 
-[![Version](https://img.shields.io/badge/Version-2.1-ff6b6b)](https://github.com/yourusername/lebanon-fintech-bdl-compliance/releases/tag/v2.1)
+[![Version](https://img.shields.io/badge/Version-2.0-purple)](https://github.com/yourusername/lebanon-fintech-bdl-compliance/releases/tag/v2.0)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Last Updated](https://img.shields.io/badge/Updated-December%202024-blue)]()
-[![Amendments](https://img.shields.io/badge/Banking%20Secrecy-Amended%202025-orange)]()
+[![Updated](https://img.shields.io/badge/Updated-August%202025-blue)]()
+[![ISO 27001:2022](https://img.shields.io/badge/ISO%2027001-2022%20Aligned-green)]()
+[![Compliance](https://img.shields.io/badge/BDL-Compliant-red)]()
 
-### **The First Comprehensive Public Reference Guide for Lebanese FinTech BDL Compliance**
-### **Now Updated with 2022/2025 Banking Secrecy Law Amendments**
+<img src="docs/assets/bdl-compliance-banner.png" alt="BDL Compliance Guide" width="100%">
 
-[📖 Read the Guide](https://yourusername.github.io/lebanon-fintech-bdl-compliance/) | 
-[🌐 Interactive Map v2.1](https://yourusername.github.io/lebanon-fintech-bdl-compliance/visual-map/) | 
+### **The Definitive Public Reference for Lebanese FinTech BDL Regulatory Compliance**
+### **Version 2.0: Enhanced with ISO 27001:2022 Annex A, Data Classification Framework & Pre-Submission Pack**
+
+[📖 Complete Guide](https://yourusername.github.io/lebanon-fintech-bdl-compliance/) | 
+[🌐 Interactive Map](https://yourusername.github.io/lebanon-fintech-bdl-compliance/visual-map/) | 
 [📥 Download PDF](https://github.com/yourusername/lebanon-fintech-bdl-compliance/releases/latest) |
-[🔄 What's New in v2.1](#whats-new-in-v21)
+[💼 Pre-Submission Pack](docs/templates/pre-submission-pack/) |
+[🎯 Quick Start](docs/guide/quick-start/)
 
 </div>
 
 ---
 
-## 🆕 What's New in v2.1 (December 2024)
+## 🆕 Version 2.0 Major Enhancements (August 2025)
 
-### 📜 Banking Secrecy Law Amendments
-- **Law No. 306/2022 & 2025 Amendments** now permit authorized access for:
-  - Judiciary and Special Investigation Commission (SIC)
-  - Tax authorities for compliance verification
-  - BDL and Banking Control Commission (BCC) for supervision
-  - National Authority for Fighting Corruption
-  - Appointed independent auditors
+### 📋 Scope & Applicability
+- **Clear Guidance:** Who needs to comply based on licensing status
+- **Non-Bank FinTechs:** Contractual obligations when partnering with BDL-supervised institutions
+- **Legal Framework:** Not exhaustive for all Lebanese laws - focused on BDL requirements
 
-### 🔍 Key Clarifications
-- **Cloud Prohibition:** Clarified as practical effect of data sovereignty requirements, not explicit circular
-- **RTO/RPO Targets:** Clearly marked as recommendations, not BDL mandates
-- **HSM Requirements:** FIPS 140-2 Level 2 acceptable for certain use cases, Level 3 preferred
-- **Official References:** Added direct links to BDL circular documents
+### 📋 Scope & Applicability
+- **Clear Guidance:** Who needs to comply based on licensing status
+- **Non-Bank FinTechs:** Contractual obligations when partnering with BDL-supervised institutions
+- **Legal Framework:** Not exhaustive for all Lebanese laws - focused on BDL requirements
+
+### 🔐 Enhanced Data Classification Framework
+
+### 🛡️ Risk-Based Security Enhancements
+- **2FA Implementation:** Mandatory for critical systems with documented risk-based exceptions
+- **Remote Access:** Exceptional cases with robust compensating controls
+- **Incident Reporting:** 24-hour BDL notification + SIC requirements for AML/CTF
+- **Network Routing:** Domestic preference with encryption fallbacks
+
+### 📊 ISO 27001:2022 Complete Mapping
+- Full Annex A control references
+- BDL-specific gap analysis
+- Implementation priority matrix
+- Evidence requirements per control
+
+### 📦 Pre-Submission Pack to BDL
+Complete artifact index including:
+- Corporate & licensing documents
+- Technology & security documentation
+- Business continuity plans
+- Compliance evidence
+- Operational procedures
 
 ---
 
-## 🚨 Critical Compliance Alert
+## 🎯 Who Should Use This Guide
 
-> **⚠️ IMPORTANT CLARIFICATION:** While BDL has not issued a standalone circular explicitly prohibiting all forms of cloud computing, its stringent data sovereignty requirements, coupled with the Banking Secrecy Law provisions and BDL's supervisory oversight, effectively mandate that all sensitive financial data for regulated activities must remain within Lebanese jurisdiction.
+### By Role
 
-### ❌ **Absolute Prohibitions (Practical Effect)**
-- International cloud hosting (AWS, Azure, GCP) for production data
-- Data export without explicit client consent and legal framework
-- Outsourcing of compliance monitoring (Circular 128/2013)
-- Remote access from outside Lebanon to production systems
-- Data processing outside Lebanese territory
-- Backup replication to foreign data centers
+| Role | Primary Sections | Key Tools |
+|------|-----------------|-----------|
+| **FinTech Founders** | Executive Summary, Budget Framework, Roadmap | ROI Calculator, Quick Start |
+| **Compliance Officers** | Circular Analysis, ISO Mapping, Evidence Pack | Compliance Checker, Gap Analyzer |
+| **Security Professionals** | Technical Controls, Architecture, Incident Response | Security Templates, Testing Tools |
+| **Legal Teams** | Banking Secrecy Law, Data Sovereignty, Penalties | Legal Opinions, Contract Templates |
+| **Auditors** | Evidence Requirements, Control Testing, Documentation | Audit Checklists, Evidence Tracker |
+| **Consultants** | Full Guide, Implementation Frameworks, Case Studies | All Tools & Templates |
 
-### ✅ **Mandatory Requirements**
-- Prior BDL approval for all digital banking applications
-- 24-hour incident reporting to BDL
-- Two-factor authentication for all system access
-- Board-approved business continuity plans
-- Lebanese jurisdiction for all data
-- End-to-end encryption for all transmissions
+### By Company Type
+
+| Company Type | Applicability | Key Requirements |
+|--------------|--------------|------------------|
+| **Licensed Banks** | Full compliance required | All BDL circulars apply |
+| **Payment Service Providers** | Partial based on services | Data sovereignty, security measures |
+| **Technology Service Providers** | Contractual when serving banks | Depends on bank partnership terms |
+| **Pure FinTechs** | Based on licensing status | Varies with BDL authorization |
 
 ---
 
 ## 📚 Documentation Structure
 
-### Core Documents
-- **[Main Guide v2.1](docs/guide/bdl-compliance-guide-v2.1.md)** - Complete compliance framework
-- **[Banking Secrecy Amendments](docs/guide/amendments/banking-secrecy-amendments-2022-2025.md)** - Detailed analysis of recent changes
-- **[Cloud Prohibition Explained](docs/guide/clarifications/cloud-prohibition-explained.md)** - Why cloud is effectively prohibited
-- **[Official BDL Links](docs/guide/references/official-bdl-links.md)** - Direct links to all circulars
-
-### Quick References
-- **[Executive Summary](docs/guide/executive-summary.md)** - For C-level executives
-- **[Quick Start Guide](docs/guide/quick-start-guide.md)** - For implementation teams
-- **[Compliance Checklist v2.1](templates/compliance-checklist-v2.1.xlsx)** - Updated with amendments
+### Core Framework
+### Key Features v2.0
+- **Change Management Framework** - When to notify BDL
+- **Remote Access Policy** - Compensating controls matrix
+- **HSM Recommendations** - FIPS 140-2 Level 2/3 guidance
+- **Network Routing** - Domestic with encryption fallbacks
+- **Evidence Examples** - Per control requirement
 
 ---
 
-[Rest of README continues with standard sections...]
+## 💰 Implementation Investment Reality
+
+### Comprehensive Cost Framework (Annual)
+
+| Category | Minimum | Typical | Maximum | ROI Consideration |
+|----------|---------|---------|---------|-------------------|
+| **Infrastructure** | $120K | $225K | $330K | Access to $11B+ market |
+| **Compliance** | $95K | $165K | $235K | Avoid criminal liability |
+| **Operations** | $135K | $235K | $335K | Regulatory confidence |
+| **Total Annual** | **$350K** | **$625K** | **$900K** | **Market differentiation** |
+
+### Cost Optimization Strategies
+- Shared Lebanese data centers
+- Pooled security operations
+- Automated compliance monitoring
+- Risk-based control implementation
+
+---
+
+## 🛠️ Tools & Resources
+
+### Interactive Tools
+- **[Compliance Checker](tools/compliance-checker/)** - Automated gap analysis
+- **[RTO/RPO Calculator](tools/calculators/rto-rpo-calculator.html)** - Recovery objective planning
+- **[Budget Estimator](tools/calculators/budget-estimator.html)** - Cost projection tool
+- **[Risk Scorer](tools/calculators/risk-scorer.html)** - Quantitative risk assessment
+
+### Templates & Checklists
+- **[Pre-Submission Pack](docs/templates/pre-submission-pack/)** - BDL submission artifacts
+- **[Policy Templates](docs/templates/policies/)** - Ready-to-customize policies
+- **[Evidence Tracker](docs/templates/evidence/)** - Audit evidence management
+- **[Daily Compliance Checklist](tools/checklists/daily-compliance.md)** - Operational tasks
+
+### Architecture Examples
+- **[Lebanese-Only Infrastructure](examples/architectures/lebanese-only-infrastructure.yaml)**
+- **[DR Site Configuration](examples/architectures/dr-site-configuration.yaml)**
+- **[Network Segmentation](examples/architectures/network-segmentation.yaml)**
+
+---
+
+## 🚀 Getting Started
+
+### Quick Setup
+```bash
+# Clone repository
+git clone https://github.com/yourusername/lebanon-fintech-bdl-compliance.git
+cd lebanon-fintech-bdl-compliance
+
+# Install dependencies
+npm install
+pip install -r requirements.txt
+
+# Run compliance checker
+python tools/scripts/validate-compliance.py
+
+# Generate evidence pack
+python tools/scripts/generate-evidence.py
+
+# Launch interactive map
+npm run serve
