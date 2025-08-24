@@ -13,9 +13,9 @@
 ### **The Definitive Public Reference for Lebanese FinTech BDL Regulatory Compliance**
 ### **Version 2.0: Enhanced with ISO 27001:2022 Annex A, Data Classification Framework & Pre-Submission Pack**
 
-[📖 Complete Guide](https://yourusername.github.io/lebanon-fintech-bdl-compliance/) | 
-[🌐 Interactive Map](https://yourusername.github.io/lebanon-fintech-bdl-compliance/visual-map/) | 
-[📥 Download PDF](https://github.com/yourusername/lebanon-fintech-bdl-compliance/releases/latest) |
+[📖 Complete Guide](https://elnaboulsi.github.io/Lebanese-FinTech-Compliance/) | 
+[🌐 Interactive Map](https://elnaboulsi.github.io/Lebanese-FinTech-Compliance/visual-map/) | 
+[📥 Download PDF](https://github.com/elnaboulsi/Lebanese-FinTech-Compliance/releases/latest) |
 [💼 Pre-Submission Pack](docs/templates/pre-submission-pack/) |
 [🎯 Quick Start](docs/guide/quick-start/)
 
