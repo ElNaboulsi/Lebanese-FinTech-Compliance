@@ -7,75 +7,39 @@
 
 ## 📖 Overview
 
-Comprehensive compliance framework and implementation guide for Lebanese FinTech companies operating under Banque Du Liban (BDL) regulations. This repository provides practical tools, templates, and guidance for achieving and maintaining regulatory compliance.
+This repository provides a practical compliance framework and implementation guide for Lebanese FinTech companies working under Banque Du Liban (BDL) regulations.
+It bridges local regulatory obligations with international best practices (ISO 27001:2022, Basel III, PCI DSS), giving you:
+
+- 📚 Documentation & analysis of BDL circulars
+- 🛠️ Technical implementation patterns
+- 📊 Compliance mapping tools
+- 📝 Ready-to-use templates & checklists
+- 🚀 A structured roadmap for achieving and maintaining compliance
 
 ## 🎯 Purpose
 
-This framework helps Lebanese FinTech companies:
-- ✅ Understand BDL regulatory requirements
-- ✅ Implement compliant technical infrastructure
-- ✅ Prepare documentation for BDL submissions
-- ✅ Maintain ongoing compliance operations
-- ✅ Align with international standards (ISO 27001:2022, Basel III, PCI DSS)
+This framework is designed to help Lebanese FinTech companies:
+
+- ✅ Understand & interpret BDL regulatory requirements
+- ✅ Implement compliant local technical infrastructure
+- ✅ Prepare structured documentation for BDL submissions
+- ✅ Maintain daily compliance operations
+- ✅ Align with global security & risk standards
 
 ## 📚 Repository Structure
 
 ```
-bdl-compliance-framework/
+Lebanese-FinTech-Compliance/
 │
-├── 📋 /documentation/           # Core compliance documentation
-│   ├── complete-guide.md        # Full compliance guide
-│   ├── executive-summary.md     # Quick reference summary
-│   └── glossary.md              # Terms and acronyms
-│
-├── 🏛️ /regulations/             # BDL circular analysis
-│   ├── circular-69-2000.md      # Electronic banking operations
-│   ├── circular-144-2017.md     # Cybersecurity measures
-│   ├── circular-141-2017.md     # Recovery plans
-│   ├── circular-128-2013.md     # Outsourcing restrictions
-│   └── banking-secrecy-law.md   # Banking Secrecy Law analysis
-│
-├── 🔧 /technical/               # Technical implementation
-│   ├── data-sovereignty.md      # Data residency requirements
-│   ├── security-controls.md     # Security implementation guide
-│   ├── encryption-standards.md  # Cryptography specifications
-│   ├── authentication.md        # 2FA implementation
-│   └── architecture-patterns.md # System architecture templates
-│
-├── 📊 /compliance-matrix/       # Compliance mapping
-│   ├── bdl-iso-mapping.md      # ISO 27001:2022 alignment
-│   ├── priority-matrix.md       # Implementation priorities
-│   ├── gap-analysis.md          # Coverage gaps analysis
-│   └── requirements-checklist.md # Master checklist
-│
-├── 🚀 /implementation/          # Implementation resources
-│   ├── 12-month-roadmap.md     # Timeline and milestones
-│   ├── budget-framework.md      # Cost planning
-│   ├── vendor-evaluation.md     # Provider assessment
-│   └── project-templates/       # Project management tools
-│
-├── 📝 /templates/               # Document templates
-│   ├── policies/                # Policy templates
-│   ├── procedures/              # Procedure documents
-│   ├── forms/                   # Compliance forms
-│   └── reports/                 # Report templates
-│
-├── 🔍 /assessment-tools/        # Self-assessment resources
-│   ├── compliance-scorecard.xlsx # Compliance scoring
-│   ├── risk-assessment.xlsx      # Risk evaluation tool
-│   └── audit-checklist.md        # Internal audit guide
-│
-├── 📈 /business-continuity/     # BCP/DRP resources
-│   ├── bcp-template.md          # Business continuity plan
-│   ├── drp-template.md          # Disaster recovery plan
-│   ├── testing-procedures.md    # Testing guidelines
-│   └── recovery-objectives.md   # RTO/RPO definitions
-│
-└── 📚 /resources/               # Additional resources
-    ├── bdl-contacts.md          # Regulatory contacts
-    ├── reference-library.md     # External references
-    ├── faq.md                   # Frequently asked questions
-    └── updates/                 # Regulatory updates log
+├── 📋 documentation/        # Core compliance documentation
+├── 🏛️ regulations/          # BDL circular analysis
+├── 🔧 technical/            # Implementation patterns
+├── 📊 compliance-matrix/    # Mapping & gap analysis
+├── 🚀 implementation/       # Roadmaps & planning
+├── 📝 templates/            # Policies, procedures, reports
+├── 🔍 assessment-tools/     # Scorecards & checklists
+├── 📈 business-continuity/  # BCP & DRP resources
+└── 📚 resources/            # FAQs & references
 
 ```
 
@@ -84,40 +48,36 @@ bdl-compliance-framework/
 ### 1️⃣ Initial Assessment
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/bdl-compliance-framework.git
+git clone https://github.com/ElNaboulsi/Lebanese-FinTech-Compliance
+cd Lebanese-FinTech-Compliance/assessment-tools
 
-# Navigate to assessment tools
-cd bdl-compliance-framework/assessment-tools
-
-# Review current compliance status
-# Use compliance-scorecard.xlsx for initial assessment
 ```
 
 ### 2️⃣ Priority Implementation
-1. Review `/documentation/executive-summary.md` for critical requirements
-2. Complete `/compliance-matrix/requirements-checklist.md`
-3. Follow `/implementation/12-month-roadmap.md`
+1. Review /documentation/executive-summary.md
+2. Complete /compliance-matrix/requirements-checklist.md
+3. Follow /implementation/12-month-roadmap.md
 
 ### 3️⃣ Documentation Preparation
-- Use templates in `/templates/` for policy creation
-- Refer to `/regulations/` for specific circular requirements
-- Prepare submission pack using guidance in documentation
+- Use /templates/ for policies & procedures
+- Reference /regulations/ for each circular
+- Build your submission pack for BDL
 
 ## ⚠️ Critical Requirements
 
 ### 🔴 EFFECTIVELY PROHIBITED
-- ❌ International cloud hosting (AWS, Azure, GCP) for production data
-- ❌ Cross-border data transfer without BDL approval
-- ❌ Outsourcing of compliance monitoring
-- ❌ Uncontrolled remote access from outside Lebanon
+- ❌ Hosting production data on AWS, Azure, or GCP
+- ❌ Cross-border data transfers without BDL approval
+- ❌ Outsourcing compliance monitoring
+- ❌ Remote access from outside Lebanon without controls
 
-### 🟢 MANDATORY REQUIREMENTS
-- ✅ Prior BDL approval for digital banking applications
-- ✅ 24-hour incident reporting to BDL
-- ✅ Two-Factor Authentication (2FA) for critical systems
-- ✅ Board-approved business continuity plans
-- ✅ Lebanese jurisdiction for all data and infrastructure
-- ✅ Strong encryption (TLS 1.2+ and AES-256)
+### 🟢 MANDATORY REQUIREMENTS (recommended) 
+- ✅ Prior BDL approval for digital banking apps
+- ✅ 24-hour incident reporting
+- ✅ Two-Factor Authentication (2FA)
+- ✅ Board-approved BCP/DRP
+- ✅ Lebanese-only data & infrastructure
+- ✅ Encryption: TLS 1.2+ / AES-256
 
 ## 📊 Implementation Timeline
 
@@ -142,19 +102,19 @@ cd bdl-compliance-framework/assessment-tools
 ## 🛠️ Technology Stack Requirements
 
 ### Mandatory Lebanese Infrastructure
-- 🇱🇧 Lebanese-based data centers
-- 🇱🇧 Local hosting providers
-- 🇱🇧 Domestic network routing
-- 🇱🇧 In-country backup sites
+- Lebanese-based data centers
+- Local hosting providers
+- Domestic network routing
+- In-country backup sites
 
-### Security Technologies
+### Security Technologies (recommended)
 - 🔐 Hardware Security Modules (HSM)
 - 🔍 SIEM solutions
 - 🛡️ Web Application Firewalls
 - 📊 Security monitoring tools
 - 🔒 Encryption systems
 
-## 📈 Compliance Metrics
+## 📈 Compliance Metrics (recommended)
 
 Track these KPIs for compliance success:
 - ✅ Regulatory approval status
@@ -164,23 +124,29 @@ Track these KPIs for compliance success:
 - 📋 Audit findings closure rate
 - 🔄 BCP/DRP testing frequency
 
+## 🔮 Coming Soon – Interactive Tools & Templates
+The next milestone will introduce semi-automated helpers to ease compliance operations:
+
+-⚖️ Compliance Checker – auto gap analysis
+-⏱️ RTO/RPO Calculator – resilience planning
+-🧮 Risk Scorer – quant risk assessment
+-📑 Pre-Submission Pack – artifacts for BDL submission
+-📝 Policy Templates – ready-to-adapt
+-📂 Evidence Tracker – audit proof mgmt
+-📋 Daily Checklist – recurring compliance ops
+-🏗️ Architecture Examples – Lebanese infra-only DR setups
+
+(Contributors are welcome to collaborate on building these – see below 👇)
+
 ## 🤝 Contributing
+We welcome contributions from the Lebanese FinTech & InfoSec community:
 
-We welcome contributions from the Lebanese FinTech community:
+1. Fork → Create branch → Commit → PR
+2. Follow BDL regulations when proposing changes
+3. Add references to official circulars
+4. Include practical examples if possible
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/enhancement`)
-3. Commit your changes (`git commit -m 'Add enhancement'`)
-4. Push to the branch (`git push origin feature/enhancement`)
-5. Open a Pull Request
-
-### Contribution Guidelines
-- Ensure accuracy with current BDL regulations
-- Include references to official circulars
-- Follow the existing documentation structure
-- Add practical examples where applicable
-
-## ⚖️ Legal Disclaimer
+## ⚖️ Disclaimer
 
 **This framework is for informational purposes only and does not constitute legal advice.** Organizations must:
 - Consult qualified Lebanese legal counsel
@@ -201,7 +167,6 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 
 For questions and support:
 - 📧 Create an issue in this repository
-- 📚 Review the [FAQ](./resources/faq.md)
 - 🔗 Check [BDL official website](https://www.bdl.gov.lb)
 
 ## 🔄 Version History
@@ -215,10 +180,7 @@ For questions and support:
 
 ## 🏆 Acknowledgments
 
-- Banque Du Liban for regulatory guidance
-- Lebanese FinTech community for feedback
-- International standards organizations (ISO, Basel Committee)
-- Security professionals contributing best practices
+- Capital Outsourcing SAL Management
 
 ---
 
