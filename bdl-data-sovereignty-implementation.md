@@ -42,10 +42,11 @@ The following classes are **our implementation mapping** to support BDL/BCC acce
 ```yaml
 # Organization baseline aligned to ISO/IEC 27001/27017.
 # Confirm details with BDL/BCC where applicable.
+# BDL 144 stresses cybersecurity capabilities and governance, not specific cipher suites
 encryption:
   at_rest: AES-256-GCM
   in_transit: TLS 1.3 (minimum 1.2)
-  key_management: HSM FIPS 140-2 Level 3
+  key_management: HSM FIPS 140-2 Level 3 or Level 2 for certain cases
   
 access_control:
   authentication: Multi-factor mandatory
@@ -73,8 +74,9 @@ infrastructure:
 #### Technical Requirements
 ```yaml
 retention:
-  audit_logs: 7 years minimum
-  system_logs: 3 years minimum
+# Retain audit and system logs for multiple years, consistent with BDL/BCC expectations, AML/CFT record-keeping, and business needs; confirm periods in your compliance plan.
+  audit_logs: x years minimum
+  system_logs: y years minimum
   configuration: Version controlled
   
 access:
@@ -281,6 +283,8 @@ encryption_config:
 
 ## 🚨 Incident Response
 
+Activate the BDL/BCC reporting workflow according to your approved incident plan.
+
 ### Data Sovereignty Violation Response
 
 #### Immediate Actions (0-15 minutes)
@@ -296,7 +300,7 @@ encryption_config:
 4. **REMEDIATE** - Implement immediate fixes
 
 #### Follow-up Actions (4-24 hours)
-1. **NOTIFY** - Submit BDL incident report within 24 hours
+1. **NOTIFY** - Report **promptly** to BDL/BCC; many institutions target **within 24 hours of confirmation** as an internal objective. Notify the **SIC** when incidents intersect **ML/TF** or suspicious activity obligations.
 2. **REVIEW** - Root cause analysis
 3. **UPDATE** - Strengthen controls
 4. **TEST** - Verify remediation effectiveness
@@ -304,6 +308,8 @@ encryption_config:
 ---
 
 ## 📋 Compliance Checklist
+
+Organization checklist aligned to ISO 27001/27017 and our BDL mapping; confirm frequencies with BCC.
 
 ### Daily Checks
 - [ ] Verify all data remains in Lebanese datacenters
@@ -332,13 +338,24 @@ encryption_config:
 ---
 
 ## 🔗 References
-- Banking Secrecy Law (1956, as amended)
-- BDL Circular 69/2000 - Electronic Banking
-- BDL Circular 144/2017 - Cybersecurity
-- ISO 27017 - Cloud Security Controls
-- NIST 800-53 - Security Controls
 
+- Banking Secrecy Law (1956, as amended Oct 2022) — official BDL English PDF. 
+- Bank of Lebanon and the Middle East
+- BDL Basic Circular 69/2000 – Electronic Banking & Financial Operations (scope & controls for e-operations). 
+- Bank of Lebanon and the Middle East
+- sic.gov.lb
+- BDL Basic Circular 144/2017 – Prevention of Cybercrime (cybersecurity governance/controls). 
+- Bank of Lebanon and the Middle East
+- blog.blominvestbank.com
+- BDL Basic Circular 141/2017 – Recovery/Resolution planning elements (continuity, planning; useful for DR posture). 
+- Bank of Lebanon and the Middle East
+- BDL Basic/Intermediate Circular 128/2013 (selected governance/outsourcing constraints; review the official Arabic/English copy before quoting). 
+- Bank of Lebanon and the Middle East
+- ISO/IEC 27001 & 27017 (your baseline control source).
+
+NIST SP 800-53 (supplementary, non-BDL).
 ---
+This guide reflects **our implementation approach** to meet **BDL/BCC supervisory access, Banking Secrecy obligations**, and relevant circulars (e.g., 69/2000, 144/2017). It does **not** introduce new legal obligations and should be read alongside the official texts. **In practice, we host secrecy-covered production data in Lebanon, avoid cross-border transfers unless a clear legal basis and explicit supervisory approval exist**, and maintain strong cybersecurity controls aligned with **ISO/IEC 27001/27017**. Institutions should consult BDL/BCC and legal counsel for **case-specific approvals**.
 
 **Document Classification:** CONFIDENTIAL  
 **Last Updated:** August 2025  
