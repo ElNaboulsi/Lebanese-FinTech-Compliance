@@ -2,40 +2,7 @@
 
 All notable changes to the Lebanese FinTech BDL Compliance Guide.
 
-## [2.0.0] - 2025-08-15
-
-### Added 🆕
-- **Scope & Applicability Section** - Clear guidance on who needs to comply
-- **4-Tier Data Classification Framework** - Detailed hosting requirements per class
-- **Change Management Framework** - BDL notification triggers and procedures
-- **ISO 27001:2022 Annex A** - Complete control mapping and references
-- **Pre-Submission Pack Checklist** - Comprehensive BDL artifact index
-- **Risk-Based 2FA Approach** - Documented exceptions for low-risk systems
-- **Remote Access Controls** - Detailed compensating control requirements
-- **SIC Notification Requirements** - AML/CTF incident reporting
-- **Network Routing Clarifications** - Domestic routing with encryption fallbacks
-- **Glossary of Terms** - Complete terminology reference
-- **Appendix A** - Pre-submission artifact index
-
-### Changed 🔄
-- **Encryption Requirements** - Clarified TLS 1.2/1.3 and application-layer encryption
-- **HSM Recommendations** - FIPS 140-2 Level 2/3 flexibility
-- **Testing Frequency** - Risk-based approach with Board approval
-- **Incident Reporting** - "Generally interpreted as within 24 hours of confirmation"
-- **2FA Scope** - Mandatory for critical with risk-based exceptions documented
-
-### Enhanced 📈
-- **Data Sovereignty Section** - More detailed hosting requirements
-- **Risk Assessment Framework** - Quantitative methodology
-- **Provider Evaluation** - Network routing verification
-- **Evidence Examples** - Added per checklist item
-- **Budget Framework** - More detailed cost breakdowns
-
-### Fixed 🔧
-- ISO control references now properly cite Annex A
-- Banking Secrecy Law amendment clarifications
-- Contact information disclaimers
-- Cloud prohibition clarifications
-
-## [1.0.0] - 2024-12-15
+## [1.0.0] - 2025-08-25
 - Initial public release
+
+
