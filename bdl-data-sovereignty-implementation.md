@@ -25,6 +25,8 @@ BDL/BCC may impose supervisory measures and sanctions **case-by-case** under app
 
 ## 📊 Data Classification Framework
 
+The following classes are **our implementation mapping** to support BDL/BCC access and secrecy obligations.
+
 ### Class 1: Banking Secrecy Protected (RED) 🔴
 **Mandatory Lebanese Hosting - Zero Exceptions**
 
