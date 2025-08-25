@@ -126,14 +126,14 @@ Track these KPIs for compliance success:
 ## 🔮 Coming Soon – Interactive Tools & Templates
 The next milestone will introduce semi-automated helpers to ease compliance operations:
 
--⚖️ Compliance Checker – auto gap analysis
--⏱️ RTO/RPO Calculator – resilience planning
--🧮 Risk Scorer – quant risk assessment
--📑 Pre-Submission Pack – artifacts for BDL submission
--📝 Policy Templates – ready-to-adapt
--📂 Evidence Tracker – audit proof mgmt
--📋 Daily Checklist – recurring compliance ops
--🏗️ Architecture Examples – Lebanese infra-only DR setups
+1.⚖️ Compliance Checker – auto gap analysis
+2.⏱️ RTO/RPO Calculator – resilience planning
+3.🧮 Risk Scorer – quant risk assessment
+4.📑 Pre-Submission Pack – artifacts for BDL submission
+5.📝 Policy Templates – ready-to-adapt
+6.📂 Evidence Tracker – audit proof mgmt
+7.📋 Daily Checklist – recurring compliance ops
+8.🏗️ Architecture Examples – Lebanese infra-only DR setups
 
 (Contributors are welcome to collaborate on building these – see below 👇)
 
