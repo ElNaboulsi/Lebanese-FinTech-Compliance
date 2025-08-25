@@ -40,6 +40,8 @@ The following classes are **our implementation mapping** to support BDL/BCC acce
 
 #### Technical Requirements
 ```yaml
+# Organization baseline aligned to ISO/IEC 27001/27017.
+# Confirm details with BDL/BCC where applicable.
 encryption:
   at_rest: AES-256-GCM
   in_transit: TLS 1.3 (minimum 1.2)
