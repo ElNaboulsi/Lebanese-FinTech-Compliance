@@ -19,7 +19,7 @@ This guide provides technical and operational requirements for implementing BDL-
 | **Cross-border transfers** of secrecy-protected data             | Banking Secrecy Law requires a legal basis & supervisory approval; client consent alone isn’t sufficient |
 | **International backup/replication**                             | Data leaves Lebanon; control & access issues                                                             |
 | **Foreign processing** (including remote admin without controls) | Supervisory access & secrecy obligations may be undermined                                               |
-
+BDL/BCC may impose supervisory measures and sanctions **case-by-case** under applicable laws and circulars. **When in doubt, seek written guidance/approval**.
 ---
 
 ## 📊 Data Classification Framework
