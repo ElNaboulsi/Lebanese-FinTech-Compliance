@@ -1,24 +1,24 @@
 # 🇱🇧 Data Sovereignty Implementation Guide
 
 ## Executive Summary
-This guide provides technical and operational requirements for implementing BDL-compliant data sovereignty controls. All financial data subject to Lebanese banking regulations must remain within Lebanese borders with zero tolerance for international data exposure.
+This guide provides technical and operational requirements for implementing BDL-compliant data sovereignty controls. Sensitive financial data covered by Lebanese banking regulation is expected to remain within Lebanese jurisdiction. In practice, BDL supervisory access, the Banking Secrecy Law, and related circulars mean production data and core regulated activities should be hosted in Lebanon, unless a clear legal basis and explicit supervisory approval exists for an alternative.
 
 ---
 
 ## 🔴 Core Sovereignty Requirements
 
 ### Legal Foundation
-- **Banking Secrecy Law (1956, as amended 2022-2025)**
-- **BDL Supervisory Access Requirements**
+- **Banking Secrecy Law (1956, as amended 2022-2025)** — criminal penalties can apply when secrecy obligations are breached.
+- **BDL Supervisory Access Requirements** — institutions must ensure regulators can access required data in Lebanon.
 - **Criminal penalties for unauthorized data export**
 
-### Absolute Prohibitions
-| Prohibited Action | Reason | Penalty |
-|-------------------|--------|---------|
-| AWS/Azure/GCP hosting | Foreign jurisdiction | License revocation |
-| Cross-border data transfer | Sovereignty violation | Criminal prosecution |
-| International backup replication | Loss of control | Regulatory sanctions |
-| Foreign data processing | Compliance breach | Service suspension |
+### Effectively Prohibited
+| Practice (for production / secrecy-covered data)                 | Why it’s generally not acceptable without approval                                                       |
+| ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Hosting on **foreign public clouds** (AWS/Azure/GCP)             | Foreign jurisdiction & limits on supervisory access; conflicts with secrecy obligations                  |
+| **Cross-border transfers** of secrecy-protected data             | Banking Secrecy Law requires a legal basis & supervisory approval; client consent alone isn’t sufficient |
+| **International backup/replication**                             | Data leaves Lebanon; control & access issues                                                             |
+| **Foreign processing** (including remote admin without controls) | Supervisory access & secrecy obligations may be undermined                                               |
 
 ---
 
