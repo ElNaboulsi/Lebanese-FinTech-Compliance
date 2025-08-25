@@ -356,7 +356,7 @@ Organization checklist aligned to ISO 27001/27017 and our BDL mapping; confirm f
 NIST SP 800-53 (supplementary, non-BDL).
 ---
 This guide reflects **our implementation approach** to meet **BDL/BCC supervisory access, Banking Secrecy obligations**, and relevant circulars (e.g., 69/2000, 144/2017). It does **not** introduce new legal obligations and should be read alongside the official texts. **In practice, we host secrecy-covered production data in Lebanon, avoid cross-border transfers unless a clear legal basis and explicit supervisory approval exist**, and maintain strong cybersecurity controls aligned with **ISO/IEC 27001/27017**. Institutions should consult BDL/BCC and legal counsel for **case-specific approvals**.
-
+---
 **Document Classification:** CONFIDENTIAL  
 **Last Updated:** August 2025  
 **Version:** 1.0  
