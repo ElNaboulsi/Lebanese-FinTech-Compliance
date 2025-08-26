@@ -1,4 +1,4 @@
-# 🇱🇧 Data Sovereignty Implementation Guide
+# Data Sovereignty Implementation Guide
 
 ## Executive Summary
 This guide provides technical and operational requirements for implementing BDL-compliant data sovereignty controls. Sensitive financial data covered by Lebanese banking regulation is expected to remain within Lebanese jurisdiction. In practice, BDL supervisory access, the Banking Secrecy Law, and related circulars mean production data and core regulated activities should be hosted in Lebanon, unless a clear legal basis and explicit supervisory approval exists for an alternative.
